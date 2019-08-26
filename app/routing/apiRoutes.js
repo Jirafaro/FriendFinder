@@ -1,11 +1,7 @@
 const express = require('express');
 const friends = require('../data/friends.js');
 
-
-server.use(express.urlencoded({extended: true}));
-server.use(express.json());
-
-module.exports( function apiRoutes(app) {
+module.exports = ( function apiRoutes(app) {
     app.get('/api/friends', (req,res) => {
         res.json(friends);
     });
